@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
-  const options = [
-    "German Shepard",
-    "Rotweiler",
-    "Burmese Mountain",
-    "Golden Retriever",
-    "Labrador",
-  ];
+  const [breeds, setBreeds] = useState([]);
+  const [selectBreed, setSelectBreed] = useState("");
+
+  //Need to use provided API to fetch list of dog breeds
+  useEffect(() => {
+    fetch("https://dog.ceo/api/breeds/list/all")
+      .then((response) => response.json())
+      .then((data) => {
+        const fetchBreeds = Object.entries(data.message).flatMap(
+          ([breed, subBreeds]) =>
+            subBreeds.length > 0
+              ? subBreeds.map((subBreed) => `${subBreed} ${breed}`)
+              : breed
+        );
+        setBreeds(fetchBreeds);
+      });
+  }, []);
+
   const onOptionChangeHandler = (event) => {
     console.log("User Selected Value - ", event.target.value);
   };
@@ -19,7 +30,7 @@ const App = () => {
 
         <select onChange={onOptionChangeHandler}>
           <option>dog list here</option>
-          {options.map((option, index) => {
+          {breeds.map((option, index) => {
             return <option key={index}>{option}</option>;
           })}
         </select>
