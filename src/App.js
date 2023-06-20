@@ -1,9 +1,5 @@
 import React from "react";
 
-<View style={{
-  flex: 1,
-  flexDirection: "row",
-}}></View>
 
 const App = () => {
   const options = ['German Shepard', 'Rotweiler', 'Burmese Mountain', 'Golden Retriever', 'Labrador'];
