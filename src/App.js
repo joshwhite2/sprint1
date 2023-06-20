@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
+
+
+const App = () => {
+  const options = ['German Shepard', 'Rotweiler', 'Burmese Mountain', 'Golden Retriever', 'Labrador'];
+  const onOptionChangeHandler = (event) => {
+    console.log("User Selected Value - ", event.target.value)
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <center>
+        <h1>Welcome to the Doggie Database</h1>
+        <h3>find the pictures of your favorite doggie pals!!</h3>
+
+        <select onChange={onOptionChangeHandler}>
+
+          <option>dog list here</option>
+          {options.map((option, index) => {
+            return <option key={index} >
+              {option}
+            </option>
+          })}
+        </select>
+        <br />
+        <input></input>
+        <br />
+        <button>Show Images</button>
+      </center>
+    </>
   );
-}
+};
 
 export default App;
