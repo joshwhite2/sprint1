@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 const App = () => {
   const [breeds, setBreeds] = useState([]);
-  const [selectBreed, setSelectBreed] = useState("");
 
   //Need to use provided API to fetch list of dog breeds
   useEffect(() => {
