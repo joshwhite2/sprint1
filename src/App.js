@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 const App = () => {
+  // search bar component
   const [breeds, setBreeds] = useState([]);
 
   //Need to use provided API to fetch list of dog breeds
