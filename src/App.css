@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+button {
+  position: absolute;
+  width: 130px;
+  height: 32px;
+  left: 80px;
+  top: 616px;
+}
+
+input {
+  position: absolute;
+  width: 272px;
+  height: 40px;
+  left: 80px;
+  top: 552px;
+}
+
+select {
+  position: absolute;
+  width: 272px;
+  height: 40px;
+  left: 80px;
+  top: 488px;
+}
