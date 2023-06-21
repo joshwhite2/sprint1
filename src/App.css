@@ -40,7 +40,7 @@ button {
   position: absolute;
   width: 130px;
   height: 32px;
-  left: 80px;
+  left: 151px;
   top: 616px;
 }
 
@@ -58,4 +58,9 @@ select {
   height: 40px;
   left: 80px;
   top: 488px;
+  font-family: "Londrina Solid", cursive;
+}
+
+option {
+  font-family: "Londrina Solid", cursive;
 }
