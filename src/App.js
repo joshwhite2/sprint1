@@ -20,6 +20,9 @@ const App = () => {
   }, []);
 
   const onOptionChangeHandler = (event) => {
+    const selectedBreed = event.target.value;
+    setSelectBreed(selectedBreed);
+
     console.log("User Selected Value - ", event.target.value);
   };
   return (
@@ -35,7 +38,7 @@ const App = () => {
           })}
         </select>
         <br />
-        <input></input>
+        <input placeholder="images per page(1-100)"></input>
         <br />
         <button>Show Images</button>
       </center>
