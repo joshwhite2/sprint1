@@ -1,5 +1,8 @@
+
+
+
 .App {
-  text-align: left;
+  text-align: center;
 }
 
 .App-logo {
@@ -36,3 +39,50 @@
     transform: rotate(360deg);
   }
 }
+button {
+  background-color:#ffdc83;
+  position: absolute;
+  width: 130px;
+  height: 32px;
+  left: 151px;
+  top: 616px;
+}
+
+input {
+  position: absolute;
+  width: 272px;
+  height: 40px;
+  left: 80px;
+  top: 552px;
+}
+
+select {
+  position: absolute;
+  width: 272px;
+  height: 40px;
+  left: 80px;
+  top: 488px;
+  font-family: "Londrina Solid", cursive;
+}
+
+option {
+  font-family: "Londrina Solid", cursive;
+}
+ h1{
+  
+  font-size: 128px;
+  font-family: "Londrina Solid", cursive;
+  color: #ffdc83;
+ }
+  h3{
+    font-size: 40px;
+    font-family: "Londrina Solid", cursive;
+    color: #ffdc83;
+
+  }
+  center{
+    background-image:linear-gradient(to right, #90DEFF, orange
+    );;
+    display:flex;
+    justify-content:flex-start;
+  }

@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
+import "./App.css";
+import ImageList from "./components/ImageList";
 
 const App = () => {
   const [breeds, setBreeds] = useState([]);
-  const [selectBreed, setSelectBreed] = useState("");
+  const [breed, setBreed] = useState(""); // State variable for the selected breed
 
-  //Need to use provided API to fetch list of dog breeds
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/list/all")
       .then((response) => response.json())
@@ -20,28 +21,33 @@ const App = () => {
   }, []);
 
   const onOptionChangeHandler = (event) => {
-    const selectedBreed = event.target.value;
-    setSelectBreed(selectedBreed);
-
     console.log("User Selected Value - ", event.target.value);
+    setBreed(event.target.value); // Update the selected breed state
   };
+
+  const [links, setLinks] = useState();
+  const [number, setNumber] = useState(4);
+  const changeState = () => {
+    console.log(breed);
+    setLinks(<ImageList breed={breed} number={number} />);
+  };
+
   return (
     <>
       <center>
         <h1>Welcome to the Doggie Database</h1>
-        <h3>find the pictures of your favorite doggie pals!!</h3>
+        <h3>Find pictures of your favorite doggie pals!!</h3>
 
         <select onChange={onOptionChangeHandler}>
-          <option>dog list here</option>
-          {breeds.map((option, index) => {
-            return <option key={index}>{option}</option>;
-          })}
+          <option>Select Breed</option>
+          {breeds.map((option, index) => (
+            <option key={index} value={option}>{option}</option>
+          ))}
         </select>
         <br />
-        <input placeholder="images per page(1-100)"></input>
-        <br />
-        <button>Show Images</button>
+        <button onClick={changeState}>Show Images</button>
       </center>
+      <div id="gallery">{links}</div>
     </>
   );
 };
