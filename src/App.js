@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import ImageList from "./components/ImageList";
 
 const App = () => {
   // search bar component
   const [breeds, setBreeds] = useState([]);
+  const [selectedBreed, setSelectedBreed] = useState("");
 
   //Need to use provided API to fetch list of dog breeds
   useEffect(() => {
@@ -22,15 +24,25 @@ const App = () => {
 
   const onOptionChangeHandler = (event) => {
     console.log("User Selected Value - ", event.target.value);
+    breed = event.target.value;
+    console.log(breed);
   };
+
+  const [links, setLinks] = useState();
+  const [number, setNumber] = useState(4);
+  const chageState = () => {
+    console.log(breed);
+    setLinks(<ImageList breed={breed} number={number} />);
+  };
+
   return (
     <>
       <center>
         <h1>Welcome to the Doggie Database</h1>
-        <h3>find the pictures of your favorite doggie pals!!</h3>
+        <h3>Find pictures of your favorite doggie pals!!</h3>
 
         <select onChange={onOptionChangeHandler}>
-          <option>dog list here</option>
+          <option>Select Breed</option>
           {breeds.map((option, index) => {
             return <option key={index}>{option}</option>;
           })}
@@ -38,8 +50,9 @@ const App = () => {
         <br />
         <input></input>
         <br />
-        <button>Show Images</button>
+        <button onClick={chageState}>Show Images</button>
       </center>
+      <div id="gallery">{links}</div>
     </>
   );
 };
