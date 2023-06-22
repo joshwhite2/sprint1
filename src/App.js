@@ -13,7 +13,7 @@ const App = () => {
         const fetchBreeds = Object.entries(data.message).flatMap(
           ([breed, subBreeds]) =>
             subBreeds.length > 0
-              ? subBreeds.map((subBreed) => `${subBreed} ${breed}`)
+              ? subBreeds.map((subBreed) => `${breed} ${subBreed}`)
               : breed
         );
         setBreeds(fetchBreeds);
@@ -28,9 +28,6 @@ const App = () => {
   const onNumberChangeHandler = (event) => {
     const inputValue = event.target.value;
     const parsedValue = parseInt(inputValue);
-    if (parsedValue >= 1 && parsedValue <= 100) {
-      setNumber(parsedValue);
-    }
   };
 
   const [links, setLinks] = useState();
