@@ -37,6 +37,7 @@
   }
 }
 button {
+  background-color: #ffdc83;
   position: absolute;
   width: 130px;
   height: 32px;
@@ -63,4 +64,19 @@ select {
 
 option {
   font-family: "Londrina Solid", cursive;
+}
+h1 {
+  font-size: 128px;
+  font-family: "Londrina Solid", cursive;
+  color: #ffdc83;
+}
+h3 {
+  font-size: 40px;
+  font-family: "Londrina Solid", cursive;
+  color: #ffdc83;
+}
+center {
+  background-image: linear-gradient(to right, #90deff, orange);
+  display: flex;
+  justify-content: flex-start;
 }

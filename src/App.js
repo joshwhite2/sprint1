@@ -3,11 +3,9 @@ import "./App.css";
 import ImageList from "./components/ImageList";
 
 const App = () => {
-  // search bar component
   const [breeds, setBreeds] = useState([]);
-  const [selectedBreed, setSelectedBreed] = useState("");
+  const [breed, setBreed] = useState(""); // State variable for the selected breed
 
-  //Need to use provided API to fetch list of dog breeds
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/list/all")
       .then((response) => response.json())
@@ -24,13 +22,20 @@ const App = () => {
 
   const onOptionChangeHandler = (event) => {
     console.log("User Selected Value - ", event.target.value);
-    breed = event.target.value;
-    console.log(breed);
+    setBreed(event.target.value); // Update the selected breed state
+  };
+
+  const onNumberChangeHandler = (event) => {
+    const inputValue = event.target.value;
+    const parsedValue = parseInt(inputValue);
+    if (parsedValue >= 1 && parsedValue <= 100) {
+      setNumber(parsedValue);
+    }
   };
 
   const [links, setLinks] = useState();
-  const [number, setNumber] = useState(4);
-  const chageState = () => {
+  const [number, setNumber] = useState([]);
+  const changeState = () => {
     console.log(breed);
     setLinks(<ImageList breed={breed} number={number} />);
   };
@@ -43,14 +48,21 @@ const App = () => {
 
         <select onChange={onOptionChangeHandler}>
           <option>Select Breed</option>
-          {breeds.map((option, index) => {
-            return <option key={index}>{option}</option>;
-          })}
+          {breeds.map((option, index) => (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          ))}
         </select>
+        <input
+          type="number"
+          min="1"
+          max="100"
+          value={number}
+          onChange={onNumberChangeHandler}
+        ></input>
         <br />
-        <input></input>
-        <br />
-        <button onClick={chageState}>Show Images</button>
+        <button onClick={changeState}>Show Images</button>
       </center>
       <div id="gallery">{links}</div>
     </>
