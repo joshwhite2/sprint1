@@ -28,10 +28,11 @@ const App = () => {
   const onNumberChangeHandler = (event) => {
     const inputValue = event.target.value;
     const parsedValue = parseInt(inputValue);
+    setNumber(parsedValue);
   };
 
   const [links, setLinks] = useState();
-  const [number, setNumber] = useState([]);
+  const [number, setNumber] = useState(1);
   const changeState = () => {
     console.log(breed);
     setLinks(<ImageList breed={breed} number={number} />);
