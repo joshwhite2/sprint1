@@ -6,7 +6,7 @@ const ImageList = ({ breed, number }) => {
 
   useEffect(() => {
     fetchImageURLs();
-  }, []);
+  }, [breed, number]);
 
   const fetchImageURLs = async () => {
     try {
@@ -20,13 +20,17 @@ const ImageList = ({ breed, number }) => {
     }
   };
 
-  return (
-    <div>
-      {imageUrls.map((url, index) => (
-        <img key={index} src={url} alt="" id="photo" />
-      ))}
-    </div>
-  );
+  try {
+    return (
+      <div>
+        {imageUrls.map((url, index) => (
+          <img key={index} src={url} alt="" id="photo" />
+        ))}
+      </div>
+    );
+  } catch (error) {
+    console.log("error", error);
+  }
 };
 
 export default ImageList;

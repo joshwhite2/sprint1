@@ -13,7 +13,7 @@ const App = () => {
         const fetchBreeds = Object.entries(data.message).flatMap(
           ([breed, subBreeds]) =>
             subBreeds.length > 0
-              ? subBreeds.map((subBreed) => `${breed} ${subBreed}`)
+              ? subBreeds.map((subBreed) => `${breed}/${subBreed}`)
               : breed
         );
         setBreeds(fetchBreeds);
@@ -34,7 +34,6 @@ const App = () => {
   const [links, setLinks] = useState();
   const [number, setNumber] = useState(1);
   const changeState = () => {
-    console.log(breed);
     setLinks(<ImageList breed={breed} number={number} />);
   };
 
@@ -47,8 +46,8 @@ const App = () => {
         <select onChange={onOptionChangeHandler}>
           <option>Select Breed</option>
           {breeds.map((option, index) => (
-            <option key={index} value={option}>
-              {option}
+            <option key={index} id={index} value={option}>
+              {option.replace("/", " ")}
             </option>
           ))}
         </select>
@@ -63,6 +62,7 @@ const App = () => {
         <button onClick={changeState}>Show Images</button>
       </center>
       <div id="gallery">{links}</div>
+      <p>{}</p>
     </>
   );
 };
