@@ -45,6 +45,7 @@ const App = () => {
           ))}
         </select>
         <br />
+        <input placeholder="number of images (1-100)"></input>
         <button onClick={changeState}>Show Images</button>
       </center>
       <div id="gallery">{links}</div>
