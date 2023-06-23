@@ -66,17 +66,61 @@ option {
   font-family: "Londrina Solid", cursive;
 }
 h1 {
+  margin: 5px;
   font-size: 128px;
   font-family: "Londrina Solid", cursive;
   color: #ffdc83;
 }
 h3 {
+  margin: 5px;
   font-size: 40px;
+  width: 544 px;
   font-family: "Londrina Solid", cursive;
   color: #ffdc83;
 }
-center {
-  background-image: linear-gradient(to right, #90deff, orange);
-  display: flex;
-  justify-content: flex-start;
+
+#gallery img {
+
+  object-fit: cover; 
+
+  margin: 5px;
+
 }
+
+body{
+  background-image: linear-gradient(to right, #90deff, rgb(255, 255, 255));
+  
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 200px, 874px;
+  grid-template-rows: 430px, 460;
+  grid-gap: 20px;
+  grid-template-areas:
+  
+    "title image"
+    "title image"
+    "search image"
+}
+
+.title{
+  margin: right 800px;
+  grid-area: title;
+}
+
+.search{
+  
+}
+
+
+
+
+
+.image-grid {
+margin-left: 660px;
+ grid-area:image;
+  
+}
+

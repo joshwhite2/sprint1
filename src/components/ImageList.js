@@ -19,12 +19,27 @@ const ImageList = ({ breed, number }) => {
       console.log("Could not fetch image URL's", error);
     }
   };
+  var width =0 ;
 
+
+  if (number == 1) {
+
+    width = 800;
+
+  } else if (number == 2) {
+
+    width = 400;
+
+  } else if (number >= 3) {
+
+    width = 200;
+
+  }
   try {
     return (
       <div>
         {imageUrls.map((url, index) => (
-          <img key={index} src={url} alt="" id="photo" />
+          <img key={index} src={url} alt="" id="photo" width={width} height={width}/>
         ))}
       </div>
     );

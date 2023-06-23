@@ -30,19 +30,33 @@ const App = () => {
     const parsedValue = parseInt(inputValue);
     setNumber(parsedValue);
   };
+  
+  
 
   const [links, setLinks] = useState();
-  const [number, setNumber] = useState(1);
+  const [number, setNumber] = useState();
   const changeState = () => {
-    setLinks(<ImageList breed={breed} number={number} />);
+    if (number <=100&& number >= 1){
+    setLinks(<ImageList breed={breed} number={number} />);}
+    else{
+    this.showError('must be between 1 & 100', 'error')};
+    
   };
 
   return (
     <>
-      <center>
-        <h1>Welcome to the Doggie Database</h1>
-        <h3>Find pictures of your favorite doggie pals!!</h3>
+      <center className= 'container'>
+        <div className= "title">
+        <h1>Doggie
+          <br/> Database</h1>
+      
+        <h3>Find photos of your favorite dogs</h3>
+        </div>
+        <span id="popup">
+       
+      </span>
 
+      <div className="search">
         <select onChange={onOptionChangeHandler}>
           <option>Select Breed</option>
           {breeds.map((option, index) => (
@@ -53,18 +67,34 @@ const App = () => {
         </select>
         <input
           type="number"
-          min="1"
-          max="100"
+          placeholder="enter number(1-100)"
+          
           value={number}
           onChange={onNumberChangeHandler}
         ></input>
         <br />
         <button onClick={changeState}>Show Images</button>
+        </div>
       </center>
-      <div id="gallery">{links}</div>
+      
+      <div id="gallery" className="image-grid">{links}</div>
       <p>{}</p>
     </>
   );
 };
 
+// showError(m, c);{
+//   var p = document.createElement("p");
+//   p.innerText = m;
+//   p.className = c;
+//   p.id = "box";};
+
+//   document.querySelector("#popup").appendChild(p);
+
+//   setTimeout(function () {
+//     document.querySelector("#box").remove();
+//   }, 2000);
+// };
+
 export default App;
+
