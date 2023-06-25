@@ -39,6 +39,7 @@
 button {
   background-color: #ffdc83;
   position: absolute;
+  border: 2px solid white;
   border-radius: 5px;
   width: 130px;
   height: 32px;
@@ -49,7 +50,8 @@ button {
 input {
   position: absolute;
   border-radius: 5px;
-  width: 264px;
+  border: 2px solid #ffdc83;
+  width: 266px;
   height: 36px;
   left: 80px;
   top: 552px;
@@ -58,6 +60,7 @@ input {
 select {
   position: absolute;
   border-radius: 5px;
+  border: 2px solid #ffdc83;
   width: 273px;
   height: 40px;
   left: 80px;
