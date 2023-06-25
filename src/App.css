@@ -39,6 +39,7 @@
 button {
   background-color: #ffdc83;
   position: absolute;
+  border-radius: 5px;
   width: 130px;
   height: 32px;
   left: 151px;
@@ -47,6 +48,7 @@ button {
 
 input {
   position: absolute;
+  border-radius: 5px;
   width: 272px;
   height: 40px;
   left: 80px;
@@ -55,6 +57,7 @@ input {
 
 select {
   position: absolute;
+  border-radius: 5px;
   width: 272px;
   height: 40px;
   left: 80px;
@@ -65,10 +68,12 @@ select {
 option {
   font-family: "Londrina Solid", cursive;
 }
+
 h1 {
-  margin: 5px;
-  font-size: 128px;
+  margin: 3px;
+  font-size: 120px;
   font-family: "Londrina Solid", cursive;
+  text-shadow: 2px 2px #282c34;
   color: #ffdc83;
 }
 h3 {
@@ -77,6 +82,7 @@ h3 {
   width: 544 px;
   font-family: "Londrina Solid", cursive;
   color: #ffdc83;
+  text-shadow: 2px 2px #282c34;
 }
 
 #gallery img {
@@ -88,15 +94,15 @@ h3 {
 }
 
 body{
-  background-image: linear-gradient(to right, #90deff, rgb(255, 255, 255));
+  background-image: linear-gradient(to right, #6bd2ff, rgb(255, 255, 255));
   
 }
 
 .container {
   display: grid;
   height: 100%;
-  grid-template-columns: 200px, 874px;
-  grid-template-rows: 430px, 460;
+  grid-template-columns: 400px, 874px;
+  grid-template-rows: 400px, 460px;
   grid-gap: 20px;
   grid-template-areas:
   
@@ -106,21 +112,29 @@ body{
 }
 
 .title{
-  margin: right 800px;
+  margin-right: 900px;
   grid-area: title;
 }
-
-.search{
-  
-}
-
-
 
 
 
 .image-grid {
-margin-left: 660px;
+
+margin-left: 500px;
  grid-area:image;
+ margin-top: 0%;
   
+}
+
+.error-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding: 10px;
+  text-align: center;
+
 }
 
