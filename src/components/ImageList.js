@@ -4,6 +4,8 @@ import { useState } from "react";
 const ImageList = ({ breed, number }) => {
   const [imageUrls, setImageUrls] = useState([]);
 
+  
+
   useEffect(() => {
     fetchImageURLs();
   }, [breed, number]);
