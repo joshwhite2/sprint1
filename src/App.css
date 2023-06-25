@@ -49,8 +49,8 @@ button {
 input {
   position: absolute;
   border-radius: 5px;
-  width: 272px;
-  height: 40px;
+  width: 264px;
+  height: 36px;
   left: 80px;
   top: 552px;
 }
@@ -58,7 +58,7 @@ input {
 select {
   position: absolute;
   border-radius: 5px;
-  width: 272px;
+  width: 273px;
   height: 40px;
   left: 80px;
   top: 488px;
