@@ -1,3 +1,5 @@
+
+
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import ImageList from "./components/ImageList";
@@ -19,7 +21,7 @@ const App = () => {
   const [breeds, setBreeds] = useState([]);
   const [breed, setBreed] = useState("");
   const [links, setLinks] = useState(null);
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState([]);
 
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/list/all")
