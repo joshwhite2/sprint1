@@ -122,7 +122,8 @@ body{
 
 
 .image-grid {
-
+position:absolute;
+top: 24px;
 margin-left: 500px;
  grid-area:image;
  margin-top: 0%;

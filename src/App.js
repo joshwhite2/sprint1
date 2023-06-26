@@ -20,7 +20,7 @@ const showError = (message) => {
 const App = () => {
   const [breeds, setBreeds] = useState([]);
   const [breed, setBreed] = useState("");
-  const [links, setLinks] = useState(null);
+  const [links, setLinks] = useState([null]);
   const [number, setNumber] = useState([]);
 
   useEffect(() => {
